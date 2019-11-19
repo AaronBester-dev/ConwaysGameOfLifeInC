@@ -4,7 +4,6 @@
 #define ROWS 20
 #define COLS 40
 
-
 int playCGOL(int currentGrid[ROWS][COLS], int futureGrid[ROWS][COLS]){
 
 int k = 0;
@@ -162,7 +161,7 @@ int numOfNeighbours = 0;
           }
         }
         else if (currentGrid[k][i]==0){
-      
+
           if(numOfNeighbours == 3){
             futureGrid[k][i]=1;
           }

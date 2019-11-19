@@ -14,10 +14,10 @@ printf("|");
 for (k = 0; k < ROWS; k++) {
 for (i = 0; i < COLS; i++) {
   if (currentGrid[k][i] == 1) {
-    printf("1");
+    printf("X");
   }
   else if (currentGrid[k][i]==0){
-    printf("0");
+    printf(" ");
   }
 
 }
