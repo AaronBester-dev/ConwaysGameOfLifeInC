@@ -31,6 +31,11 @@ strcpy(filename,argv[1]);
 
 userTickNum = atoi(argv[2]);
 
+if(userTickNum <1){
+printf("%d is too small\n", userTickNum );
+return(-2);
+}
+
 if((f1 = fopen(filename,"r")) !=NULL){
 k = 0;
   while(fgets(string,200,f1)){
@@ -51,17 +56,17 @@ fclose(f1);
 printGrid(currentGrid,currentTickNum);
 
 while(startCheck == 0){
-  printf("Start? [Y Or N]\n");
+  printf("Start? [y Or n]\n");
   fgets(userResponse,200,stdin);
-  if (userResponse[0] == *"Y"){
+  if (userResponse[0] == *"y"){
     startCheck = 1;
   }
-  else if(userResponse[0] == *"N"){
+  else if(userResponse[0] == *"n"){
     startCheck = 1;
     return(0);
   }
   else{
-    printf("Only acceptable response is Y or N.\n");
+    printf("Only acceptable response is y or n.\n");
   }
 }
 while((continueCheck == 0)){
@@ -73,6 +78,8 @@ for (i = 0;i<userTickNum; i++ ){
   currentTickNum++;
 
 if (memcmp(futureGrid,currentGrid,sizeof(currentGrid))== 0){
+  system("clear");
+  printGrid(currentGrid,currentTickNum);
   return(0);
 }
 
@@ -85,14 +92,14 @@ system("sleep 0.25");
 }
 printf("Continue? [y or n]\n");
 fgets(userResponse,200,stdin);
-  if(strcmp(userResponse,"y")==0){
+  if(userResponse[0] == *"y"){
     continueCheck=0;
   }
-  else if(strcmp(userResponse,"n")==0){
+  else if(userResponse[0] == *"n"){
     return(0);
   }
   else{
-    printf("Please enter either a y or n\n");
+    printf("Only acceptable response is y or n.\n");
   }
 }
 return(0);
