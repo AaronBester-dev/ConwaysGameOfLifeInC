@@ -1,13 +1,13 @@
-all: cgol dcgol
+all: cgol dynCGOL
 
 cgol: cgol.o playCGOL.o printGrid.o
 	gcc -ansi -Wall cgol.o playCGOL.o printGrid.o -o cgol
 
-dcgol: dcgol.o 
-	gcc -ansi -Wall dcgol.o  -o dcgol
+dynCGOL: dynCGOL.o 
+	gcc -ansi -Wall dynCGOL.o  -o dynCGOL
 
-dcgol.o: dcgol.c
-		gcc -ansi -Wall -c dcgol.c
+dynCGOL.o: dynCGOL.c
+		gcc -ansi -Wall -c dynCGOL.c
 
 
 
@@ -19,4 +19,4 @@ printGrid.o: printGrid.c
 		gcc -ansi -Wall -c printGrid.c
 
 clean:
-	rm cgol cgol.o printGrid.o playCGOL.o dcgol.o dcgol dPlayCGOL.o dPrintGrid.o
+	rm cgol cgol.o printGrid.o playCGOL.o dynCGOL.o dynCGOL
