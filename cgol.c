@@ -102,8 +102,7 @@ int main(int argc, char * argv[]) {
       currentTickNum++;
 
       if (memcmp(futureGrid, currentGrid, sizeof(currentGrid)) == 0) {
-        system("clear");
-        printGrid(currentGrid, currentTickNum);
+
         return (0);
       }
 

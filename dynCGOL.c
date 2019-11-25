@@ -278,33 +278,6 @@ int main(int argc, char * argv[]) {
       currentTickNum++;
 
       if (memcmp(futureGrid, currentGrid, sizeof(currentGrid)) == 0) {
-        system("clear");
-        printf(" ");
-        for (i = 0; i < col; i++) {
-          printf("-");
-        }
-        printf("\n");
-        printf("|");
-        for (k = 0; k < row; k++) {
-          for (i = 0; i < col; i++) {
-            if (currentGrid[k][i] == 1) {
-              printf("X");
-            } else if (currentGrid[k][i] == 0) {
-              printf(" ");
-            }
-
-          }
-          printf("|\n");
-          if (k < row - 1) {
-            printf("|");
-          }
-
-        }
-        printf(" ");
-        for (i = 0; i < col; i++) {
-          printf("-");
-        }
-        printf("%d\n", currentTickNum);
         return (0);
       }
 
